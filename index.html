@@ -7,29 +7,89 @@
 
     <title>Login</title>
     <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/global.css" />
 </head>
 
-<body>
+<body class="body centralize">
     <form>
-        <div>
+        <div class="form-field">
             <div><label>Email</label></div>
-            <input type="email" name="email" placeholder="seu@email.com" />
+            <input class="input" type="email" name="email" id="email" onchange="onChangeEmail()"
+                placeholder="seu@email.com" />
+            <div class="error" id="email-required">Email é obrigatório</div>
+            <div class="error" id="email-invalid">Email é Inválido</div>
         </div>
-        <div>
+        <div class="form-field">
             <div><label>Senha</label></div>
-            <input type="password" name="password" placeholder="Senha" />
+            <input class="input" id="password" type="password" name="password" onchange="onChangePassword()"
+                placeholder="Senha" />
+            <div class="error" id="password-required">Senha é obrigatória</div>
         </div>
         <div>
-            <button type="button">Recuperar Senha</button>
+            <button type="button" id="recorevypassword" name="recorevypassword" class="clear" disabled="true">Recuperar
+                Senha</button>
         </div>
         <div>
-            <button type="button">Entrar</button>
+            <button type="button" id="loginbutton" name="loginbutton" class="solid" disabled="true">Entrar</button>
         </div>
         <div>
-            <button type="button">Registrar</button>
+            <button type="button" class="outline" onclick="registrar()">Registrar</button>
         </div>
     </form>
-    <script src="JS/Index.js">
+    <script src="/js/Index.js"></script>
+    <script src="/js/validations.js"></script>
+    <script src="/js/loading.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA7yhvXrf-UWIZPnsCshJB-y4ynpCt5hpc",
+            authDomain: "login-golzim.firebaseapp.com",
+            projectId: "login-golzim",
+            storageBucket: "login-golzim.appspot.com",
+            messagingSenderId: "708545937045",
+            appId: "1:708545937045:web:721e937c92fc2182bd659c"
+        };
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth();
+
+
+        loginbutton.addEventListener('click', (e) => {
+            showLoading();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    console.log('User', userCredential.user);
+                    hideLoading();
+                    logar();
+                    // ...
+                })
+                .catch((err) => {
+                    hideLoading();
+                    alert(err.message);
+                });
+
+        });
+        recorevypassword.addEventListener('click', (e) => {
+            const email = document.getElementById("email").value;
+            console.log(email);
+            showLoading();
+            sendPasswordResetEmail(auth, email).then((userCredential) => {
+                hideLoading();
+                alert(userCredential.value);
+            }).catch((error) => {
+                hideLoading();
+                alert(error.message)
+            });
+        });
+
     </script>
 </body>
 
