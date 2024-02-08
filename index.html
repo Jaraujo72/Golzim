@@ -65,8 +65,6 @@
             signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     // Signed in 
-                    const user = userCredential.user;
-                    console.log('User', userCredential.user);
                     hideLoading();
                     logar();
                     // ...
@@ -81,13 +79,18 @@
             const email = document.getElementById("email").value;
             console.log(email);
             showLoading();
-            sendPasswordResetEmail(auth, email).then((userCredential) => {
+            sendPasswordResetEmail(auth, email).then(() => {
+                // Password reset email sent!
+
                 hideLoading();
-                alert(userCredential.value);
-            }).catch((error) => {
-                hideLoading();
-                alert(error.message)
-            });
+            })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                    hideLoading();
+                    // ..
+                });
         });
 
     </script>
