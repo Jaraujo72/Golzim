@@ -44,11 +44,9 @@ function isPassWordValid() {
     return true;
 }
 
-function logar() {
-    window.location.href = '/pages/home/home.html';
-}
+
 function registrar() {
-    window.location.href = '/pages/register/register.html'
+    window.location.href = '/pages/register/registro.html'
 }
 const forms = {
     email: () => document.getElementById("email"),
