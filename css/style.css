@@ -1,14 +1,6 @@
-.topPagina {
-    display: flex;
-    height: 40hv;
-    background: #ffffff;
-    justify-content: center;
-    align-items: start;
-    position: relative;
-    width: 98,5%;
-    background: #faca54;
-    padding: 10px;
-}
+
+
+
 
 button {
     padding: 10px;

@@ -4,45 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro Golzimbet</title>
+    <link rel="shortcut icon" href="/img/Gol.png">
     <link rel="stylesheet" href="/CSS/global.css" />
     <link rel="stylesheet" href="/CSS/register.css" />
 </head>
 
-<body class="body centralize">
-    <form>
-        <div>
-            <div class="form-field">
-                <div><label for="emailCad" id="email">Email</label></div>
-                <input type="email" name="emailCad" id="emailCad" placeholder="seu@email" onchange="onchangeMail()" />
-                <div class="error" id="emailrequired">Email é obrigatório</div>
-                <div class="error" id="emailinvalid">Email é Inválido</div>
-            </div>
-            <div class="form-field">
-                <div><label for="senhaCad">Senha</label></div>
-                <input type="password" name="senhaCad" id="senhaCad" placeholder="senha"
-                    onchange="onChangePassword()" />
-                <div class="error" id="password-required">Senha é obrigatória</div>
-                <div class="error" id="passwordMinWidt">Senha menor que 6 digitos</div>
-            </div>
-            <div class="form-field">
-                <div><label for="recorevypassword" id="ConfirmPass">Confirmar Senha</label></div>
-                <input type="password" name="recorevypassword" id="recorevypassword" placeholder="senha"
-                    onchange="onRepeatPassWord()" />
-                <div class="error" id="passwordEquals">Senhas diferentes</div>
+<body>
+    <div class="topPagina">
+        <img src="/img/golzimLimpo.png" width="15%">
+    </div>
+    <div class="body centralize">
+        <form>
+            <div class="BemVindo">
+                <h3>Criar Conta</h3>
             </div>
             <div>
-                <button type="button" id="registerButton" name="registerButton" class="solid"
-                    disabled="true">Registrar</button>
-            </div>
-            <div>
-                <button type="button" id="btnVoltarLogin" name="btnVoltarLogin" class="clear">Login</button>
-            </div>
-            <div>
+                <div class="form-field">
+                    <div><label for="emailCad" id="email">Email</label></div>
+                    <input class="input" type="email" name="emailCad" id="emailCad" placeholder="seu@email"
+                        onchange="onchangeMail()" />
+                    <div class="error" id="emailrequired">Email é obrigatório</div>
+                    <div class="error" id="emailinvalid">Email é Inválido</div>
+                </div>
+                <div class="form-field">
+                    <div><label for="senhaCad">Senha</label></div>
+                    <input class="input" type="password" name="senhaCad" id="senhaCad" placeholder="senha"
+                        onchange="onChangePassword()" />
+                    <div class="error" id="password-required">Senha é obrigatória</div>
+                    <div class="error" id="passwordMinWidt">Senha menor que 6 digitos</div>
+                </div>
+                <div class="form-field">
+                    <div><label for="recorevypassword" id="ConfirmPass">Confirmar Senha</label></div>
+                    <input class="input" type="password" name="recorevypassword" id="recorevypassword"
+                        placeholder="senha" onchange="onRepeatPassWord()" />
+                    <div class="error" id="passwordEquals">Senhas diferentes</div>
+                </div>
+                <div>
+                    <button type="button" id="registerButton" name="registerButton" class="solid"
+                        disabled="true">Registrar</button>
+                </div>
+                <div>
+                    <button type="button" id="btnVoltarLogin" name="btnVoltarLogin" class="clear">Voltar ao
+                        Login</button>
+                </div>
+                <div>
 
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
     <script src="/js/register.js"></script>
     <script src="/js/validations.js"></script>
     <script src="/js/loading.js"></script>
@@ -52,7 +63,7 @@
         import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
         import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
-    
+
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
         const auth = getAuth();

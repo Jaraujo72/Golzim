@@ -1,6 +1,7 @@
 .body {
-    background: white; /*rgb(45, 211, 111)*/
-    height: 80vh;
+    background: white;
+    /*rgb(45, 211, 111)*/
+    height: 60vh;
     margin: 0;
 }
 
@@ -14,26 +15,66 @@
     display: none;
 }
 
+.input {
+    padding: 10px;
+    width: -webkit-fill-available;
+    border: none;
+    background: #DCDCDC;
+}
+
+
 .centralize {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.BemVindo {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 30%;
+}
+
+.topPagina {
+    display: flex;
+    height: 40hv;
+    background: #ffffff;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    width: 98, 5%;
+    background: #faca54;
+    padding: 10px;
+}
+
 .loading {
-    background: rgba(0, 0, 0, 0.5);
     position: fixed;
-    width: 100%;
+    width: 90%;
     height: 100%;
 }
 
 .loading label {
     font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.topPaginaLoading {
+    display: flex;
+    height: 40%;
+    background: #ffffff;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    width: 90, 5%;
+    padding: 10px;
 }
 
 .clear {
     color: #22284c;
     border: none;
+    background: transparent;
 }
 
 .clear:active {
@@ -42,7 +83,7 @@
 }
 
 .solid {
-    background: #faca54;
+    background: #fece56;
     border: none;
     color: #22284c;
 }

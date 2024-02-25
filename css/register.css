@@ -1,6 +1,6 @@
 .body {
-    background: rgb(45, 211, 111);
-    height: 100vh;
+    background: white; /*rgb(45, 211, 111)*/
+    height: 60vh;
     margin: 0;
 }
 

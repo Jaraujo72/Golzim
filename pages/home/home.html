@@ -4,16 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Confie e Ganhe</title>
+    <link rel="shortcut icon" href="/img/Gol.png">
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/CSS/global.css" />
     <link rel="stylesheet" href="/CSS/home.css" />
 </head>
 
-<body class="body">
-    <header>
-        <button type="button" name="btnSair" id="btnSair" class="clear">Sair</button>
-    </header>
+<body>
+
+    <div class="topPagina">
+        <img src="/img/golzimLimpo.png" width="30%">
+    </div>
+
+    <div class="textoHome">
+        <h3>Confie e Ganhe!</h3>
+    </div>
+    <di class="textoHome">
+        <p>Aqui você encontra as melhores projeções de apostas elaboradas por inteligência artificial.</p>
+    </di>
+
+    <ul class="accordion-menu">
+        <li>
+            <div class="dropdownlink"> 1-Gol 1º Tempo
+            </div>
+        </li>
+        <li>
+            <div class="dropdownlink"> 2-Gols 1º Tempo
+            </div>
+        </li>
+        <li>
+            <div class="dropdownlink">3-Gols 1º Tempo
+            </div>
+        </li>
+        <li>
+            <div class="dropdownlink">2-Gols no Jogo (90 min)
+            </div>
+        </li>
+        <li>
+            <div class="dropdownlink">3-Gols no Jogo (90 min)
+            </div>
+        </li>
+        <li>
+            <div class="dropdownlink">Resutado Final
+            </div>
+        </li>
+    </ul>
+    <div class="btnpositionHome">
+        <button type="button" name="btnSair" id="btnSair" class="clearHome">Sair</button>
+    </div>
+    <script src="/js/home.js"></script>
     <script src="/js/validations.js"></script>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
