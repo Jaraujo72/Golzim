@@ -72,6 +72,7 @@ body {
     &:hover {
         background-color: #faca54;
         color: #22284c;
+        font-weight: bold;
     }
 }
 

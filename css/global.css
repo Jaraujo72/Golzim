@@ -34,6 +34,8 @@
     justify-content: center;
     position: relative;
     margin-top: 30%;
+    color: #22284c;
+    font-weight: bold;
 }
 
 .topPagina {
@@ -73,6 +75,7 @@
 
 .clear {
     color: #22284c;
+    font-weight: bold;
     border: none;
     background: transparent;
 }
@@ -86,11 +89,13 @@
     background: #fece56;
     border: none;
     color: #22284c;
+    font-weight: bold;
 }
 
 .outline {
     background: transparent;
     color: #22284c;
+    font-weight: bold;
     border: 1px solid white;
 }
 
