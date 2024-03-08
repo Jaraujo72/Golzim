@@ -1,5 +1,5 @@
 .body {
-    background: white;
+    background: #fff;
     /*rgb(45, 211, 111)*/
     height: 60vh;
     margin: 0;
@@ -10,7 +10,7 @@
 }
 
 .error {
-    color: white;
+    color: #fff;
     background: red;
     display: none;
 }
@@ -27,6 +27,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.btnpositionHome {
+    float: right;
+    width: 50px;
+    margin-right: 0%;
+    height: 50px;
+    text-align: right;
+    margin-top: 1px;
+}
+
+.clearHome {
+    color: white;
+    border: none;
+    background: transparent;
 }
 
 .BemVindo {

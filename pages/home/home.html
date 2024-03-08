@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/CSS/global.css" />
     <link rel="stylesheet" href="/CSS/home.css" />
+    
 </head>
 
 <body>
@@ -26,7 +27,7 @@
 
     <ul class="accordion-menu">
         <li>
-            <div class="dropdownlink"> 1-Gol 1º Tempo
+            <div class="dropdownlink" onclick="acessar1gol1tempo()"> 1-Gol 1º Tempo
             </div>
         </li>
         <li>
@@ -55,6 +56,7 @@
     </div>
     <script src="/js/home.js"></script>
     <script src="/js/validations.js"></script>
+    <script src="/js/1gol1tempo.js"></script>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";

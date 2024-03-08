@@ -1,17 +1,6 @@
-.clearHome {
-    color: white;
-    border: none;
-    background: transparent;
-}
 
-.btnpositionHome {
-    float: right;
-    width: 50px;
-    margin-right: 0%;
-    height: 50px;
-    text-align: right;
-    margin-top: 1px;
-}
+
+
 
 .iconePosition {
     display: flex;
