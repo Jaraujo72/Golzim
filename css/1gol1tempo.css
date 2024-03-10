@@ -232,7 +232,8 @@ hr {
 }
 
 .team_link {
-    color: #275f2f
+    color: #275f2f;
+    font-size: 18px;
 }
 
 .banner {
@@ -847,9 +848,7 @@ input:checked+.slider:before {
         font-size: 10px
     }
 
-    .chevron-right {
-        margin-right: auto
-    }
+
 
     .tv {
         width: 20px;

@@ -48,6 +48,11 @@ function isPassWordValid() {
 function registrar() {
     window.location.href = '/pages/register/registro.html'
 }
+
+function voltarInicio() {
+    window.location.href = '/pages/home/home.html'
+}
+
 const forms = {
     email: () => document.getElementById("email"),
     passwordrequired: () => document.getElementById("password-required"),

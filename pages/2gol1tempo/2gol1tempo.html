@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confie e Ganhe</title>
+  <link rel="shortcut icon" href="/img/Gol.png">
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/CSS/global.css" />
+  <link rel="stylesheet" href="/CSS/home.css" />
+
+</head>
+
+<body>
+  <div class="topPagina">Jogos do dia 09/03/2024 +1.5 ht</div>
+  <div class="topPaginaPages">Premier League</div>
+  <ul class="accordion-pages">
+    <li>
+      <a href="https://fir3.net/zYFTpHY7Uk" target="_blank" style="text-decoration: none;">
+        <div class="dropdownlink">
+          <p>Arsenal <span><b> 1 x 1 </b> </span> Brentford </p>
+          <div class="InfoPartida"><br><br><br>Green</div>
+        </div>
+
+      </a>
+    </li>
+  </ul>
+  <div class="topPaginaPages">Bundesliga</div>
+  <ul class="accordion-pages">
+    <li>
+      <a href="https://fir3.net/sPPbc0n" target="_blank" style="text-decoration: none;">
+        <div class="dropdownlink">
+          <p>Werder Bremen <span><b> 0 x 2 </b> </span> Borussia Dortmund </p>
+          <div class="InfoPartida"><br><br><br>Green</div>
+        </div>
+    </li>
+    <li>
+      <a href="https://fir3.net/arsenalxbrentford" target="_blank" style="text-decoration: none;">
+        <div class="dropdownlink">
+          <p>Werder Bremen <span><b> 0 x 1 </b> </span> Borussia Dortmund </p>
+          <div class="InfoPartida"><br><br><br></div>
+        </div>
+    </li>
+  </ul>
+  <div class="btnpositionHome">
+    <button type="button" name="btnVoltar" id="btnVoltar" class="clearHome" onclick="voltarInicio()">Voltar</button>
+  </div>
+  <script src="/js/Index.js"></script>
+  <script src="/js/home.js"></script>
+  <script src="/js/validations.js"></script>
+  <script src="/js/1gol1tempo.js"></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+    import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+
+    btnSair.addEventListener('click', (e) => {
+        signOut(auth)
+            .then(() => {
+                // Signed in 
+                window.location.href = '../../../index.html';
+                // ...
+            })
+            .catch((err) => {
+                hideLoading();
+                alert(err.message);
+            });
+
+    });
+
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            window.location.href = '../../../index.html';
+        };
+    });
+</script>
+</body>
+
+</html>

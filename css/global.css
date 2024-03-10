@@ -44,6 +44,19 @@
     background: transparent;
 }
 
+.divLeft{
+    float: left;
+    margin-top: 2%;
+    margin-right: 10px;  
+    font-size: 12px;
+}
+.divRight {
+    float: right;
+    margin-top: 2%;
+    margin-right: 10px;
+    font-size: 10px;
+}
+
 .BemVindo {
     display: flex;
     justify-content: center;
@@ -51,6 +64,14 @@
     margin-top: 30%;
     color: #22284c;
     font-weight: bold;
+}
+
+.datahorajogo {
+    float: right;
+    width: 150px;
+    margin-right: 0%;
+    text-align: center;
+    position: fixed;
 }
 
 .topPagina {
@@ -63,6 +84,26 @@
     width: 98, 5%;
     background: #faca54;
     padding: 10px;
+}
+
+.topPaginaPages {
+    display: flex;
+    height: 40hv;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    width: 98, 5%;
+    padding: 10px;
+    color: white;
+}
+
+.InfoPartida {
+    float: right;
+    margin-right: 0;
+    text-align: right;
+    margin-top: 1px;
+    position: fixed;
+    font-size: 10px;
 }
 
 .loading {
@@ -92,6 +133,21 @@
     color: #22284c;
     font-weight: bold;
     border: none;
+    background: transparent;
+}
+
+.link_to_match {
+    width: 5% !important
+}
+
+.imgRight {
+    display: flex;
+    align-items: right;
+    float: right;
+    position: relative;
+    margin-top: 1%;
+    margin-right: 2px;
+    width: 20px;
     background: transparent;
 }
 
