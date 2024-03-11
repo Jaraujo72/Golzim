@@ -13,81 +13,87 @@
 </head>
 
 <body>
-  <div class="topPagina">Jogos do dia 10/03/2024 Favorito Vence</div>
-  <div class="topPaginaPages">Liga Portugal</div>
+  <div class="topPagina" style="font-size: 20px; text-align: center; "><b>Dia 10/03/2024 Resultado Final</b></div>
   <ul class="accordion-pages">
     <li>
       <a href="https://fir3.net/X5WtC6wSm" target="_blank" style="text-decoration: none;">
-        <p class="divLeft">17:30</p>
-        <p class="divRight">Casa Vence</p>
         <div class="dropdownlink">
-          <p>Benfica x Estoril
-          </p>
+          <div class="time">
+            <p><b>Real Madrid x Celta de Vigo</b></p>
+            <div class="palpite">
+              <p><b>16:00 (Casa ou Empate)</b></p>
+            </div>
+          </div>
         </div>
       </a>
     </li>
   </ul>
-  <div class="topPaginaPages">Campeonato Italiano</div>
   <ul class="accordion-pages">
     <li>
       <a href="https://fir3.net/t2Kbzs5Z" target="_blank" style="text-decoration: none;">
-        <p class="divLeft">11:00</p>
-        <p class="divRight">Casa Vence</p>
         <div class="dropdownlink">
-          <p>Milan x Empoli
-          </p>
+          <div class="time">
+            <p><b>Bayer Leverkussen x Wolfsburg</b></p>
+            <div class="palpite">
+              <p><b>16:00 (Casa ou Empate)</b></p>
+            </div>
+          </div>
         </div>
       </a>
     </li>
   </ul>
-  <div class="topPaginaPages">Campeonato Francês</div>
   <ul class="accordion-pages">
     <li>
       <a href="https://fir3.net/lN3nld4hbB" target="_blank" style="text-decoration: none;">
-        <p class="divLeft">09:00</p>
-        <p class="divRight">Casa Vence</p>
         <div class="dropdownlink">
-          <p>PSG x Reims
-          </p>
+          <div class="time">
+            <p><b>PSG x Reims</b></p>
+            <div class="palpite">
+              <p><b>16:00 (Casa ou Empate)</b></p>
+            </div>
+          </div>
         </div>
       </a>
     </li>
   </ul>
-  <div class="topPaginaPages">Bundesliga</div>
   <ul class="accordion-pages">
     <li>
       <a href="https://fir3.net/xf0OrMnBaU" target="_blank" style="text-decoration: none;">
-        <p class="divLeft">15:30</p>
-        <p class="divRight">Casa Vence</p>
-        <div class="dropdownlink">
-          <p>Bayer Leverkus x Wolfsburg
-          </p>
+        <div class="dropdownlink" style="background-color: green;">
+          <div class="time">
+            <p><b>Benfica x Estoril</b></p>
+            <div class="palpite" style="color: white;">
+              <p><b>(Vencedor)</b></p>
+            </div>
+          </div>
         </div>
       </a>
     </li>
   </ul>
-  <div class="topPaginaPages">Campeonato Espanhol</div>
   <ul class="accordion-pages">
     <li>
       <a href="https://fir3.net/yEz4JH0" target="_blank" style="text-decoration: none;">
-        <p class="divLeft">14:30</p>
-        <p class="divRight">Casa Vence</p>
         <div class="dropdownlink">
-          <p>Real Madrid x Celta de Vigo
-          </p>
+          <div class="time">
+            <p><b>Milan x Bologna</b></p>
+            <div class="palpite">
+              <p><b>16:00 (Casa ou Empate)</b></p>
+            </div>
+          </div>
         </div>
       </a>
     </li>
   </ul>
-  <div class="topPaginaPages">Campeonato Goiano</div>
   <ul class="accordion-pages">
     <li>
       <a href="https://fir3.net/LtE8rdWa" target="_blank" style="text-decoration: none;">
-        <p class="divLeft">16:00</p>
-        <p class="divRight">Casa Vence</p>
         <div class="dropdownlink">
-          <p>Goiás x Goiânia
-          </p>
+          <div class="time">
+            <p><b>Goiás x Goiânia</b></p>
+            <div class="palpite">
+              <p><b>16:00 (Casa ou Empate)</b></p>
+            </div>
+          </div>
         </div>
       </a>
     </li>
@@ -109,24 +115,9 @@
     const database = getDatabase(app);
     const auth = getAuth();
 
-
-    btnSair.addEventListener('click', (e) => {
-      signOut(auth)
-        .then(() => {
-          // Signed in 
-          window.location.href = '../../../index.html';
-          // ...
-        })
-        .catch((err) => {
-          hideLoading();
-          alert(err.message);
-        });
-
-    });
-
     onAuthStateChanged(auth, (user) => {
       if (!user) {
-        window.location.href = '../../../index.html';
+        window.location.href = '../../../login.html';
       };
     });
   </script>

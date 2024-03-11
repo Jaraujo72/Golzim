@@ -50,7 +50,7 @@ function registrar() {
 }
 
 function voltarInicio() {
-    window.location.href = '/pages/home/home.html'
+    window.location.href = '../../../index.html'
 }
 
 const forms = {

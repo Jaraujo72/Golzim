@@ -44,12 +44,13 @@
     background: transparent;
 }
 
-.divLeft{
+.divLeft {
     float: left;
     margin-top: 2%;
-    margin-right: 10px;  
+    margin-right: 10px;
     font-size: 12px;
 }
+
 .divRight {
     float: right;
     margin-top: 2%;
@@ -176,4 +177,20 @@ button:active {
 
 button:disabled {
     opacity: 0.7;
+}
+
+.time {
+    display: block;
+    align-items: center;
+    float: right;
+    position: relative;
+    text-align: center;
+    color: #22284c;
+    font-size: 20px;
+}
+
+.palpite {
+    display: block;
+    font-size: 13px;
+    color: green;
 }

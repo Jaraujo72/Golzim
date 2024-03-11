@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login Golzimbet</title>
+    <link rel="shortcut icon" href="/img/Goll.png">
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/global.css" />
+</head>
+
+
+<body>
+    <header class="topPagina">
+        <img src="/img/golzimLimpo.png" width="30%">
+    </header>
+    <div class="body centralize">
+        <form>
+            <div class="BemVindo">
+                <h3>Entre e acesse as melhores tendências</h3>
+            </div>
+            <div class="form-field">
+                <div><label>Email</label></div>
+                <input class="input" type="email" name="email" id="email" onchange="onChangeEmail()"
+                    placeholder="seu@email.com" />
+                <div class="error" id="email-required">Email é obrigatório</div>
+                <div class="error" id="email-invalid">Email é Inválido</div>
+            </div>
+            <div class="form-field">
+                <div><label>Senha</label></div>
+                <input class="input" id="password" type="password" name="password" onchange="onChangePassword()"
+                    placeholder="Senha" />
+                <div class="error" id="password-required">Senha é obrigatória</div>
+            </div>
+            <div>
+                <button type="button" id="recorevypassword" name="recorevypassword" class="clear"
+                    disabled="true">Recuperar
+                    Senha</button>
+            </div>
+            <div>
+                <button type="button" id="loginbutton" name="loginbutton" class="solid" disabled="true">Entrar</button>
+            </div>
+            <div>
+                <button type="button" class="outline" onclick="registrar()">Registrar</button>
+            </div>
+        </form>
+    </div>
+    <script src="/js/Index.js"></script>
+    <script src="/js/validations.js"></script>
+    <script src="/js/loading.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth();
+
+
+        loginbutton.addEventListener('click', (e) => {
+            showLoading();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    hideLoading();
+                    logar();
+                    // ...
+                })
+                .catch((err) => {
+                    hideLoading();
+                    alert(err.message);
+                });
+
+        });
+        recorevypassword.addEventListener('click', (e) => {
+            const email = document.getElementById("email").value;
+            console.log(email);
+            showLoading();
+            sendPasswordResetEmail(auth, email).then(() => {
+                // Password reset email sent!
+
+                hideLoading();
+            })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                    hideLoading();
+                    // ..
+                });
+        });
+        auth.onAuthStateChanged(function (user) {
+            if (user) {
+                console.log(user);
+                logar();
+            }
+        })
+    </script>
+</body>
+
+</html>

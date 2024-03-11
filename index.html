@@ -4,57 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Login Golzimbet</title>
-    <link rel="shortcut icon" href="/img/Goll.png">
-    <link rel="stylesheet" href="/CSS/style.css" />
+    <title>Confie e Ganhe</title>
+    <link rel="shortcut icon" href="/img/Gol.png">
+    <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/CSS/global.css" />
+    <link rel="stylesheet" href="/CSS/home.css" />
+
 </head>
 
-
 <body>
-    <header class="topPagina">
-        <img src="/img/golzimLimpo.png" width="30%">
-    </header>
-    <div class="body centralize">
-        <form>
-            <div class="BemVindo">
-                <h3>Entre e acesse as melhores tendências</h3>
-            </div>
-            <div class="form-field">
-                <div><label>Email</label></div>
-                <input class="input" type="email" name="email" id="email" onchange="onChangeEmail()"
-                    placeholder="seu@email.com" />
-                <div class="error" id="email-required">Email é obrigatório</div>
-                <div class="error" id="email-invalid">Email é Inválido</div>
-            </div>
-            <div class="form-field">
-                <div><label>Senha</label></div>
-                <input class="input" id="password" type="password" name="password" onchange="onChangePassword()"
-                    placeholder="Senha" />
-                <div class="error" id="password-required">Senha é obrigatória</div>
-            </div>
-            <div>
-                <button type="button" id="recorevypassword" name="recorevypassword" class="clear"
-                    disabled="true">Recuperar
-                    Senha</button>
-            </div>
-            <div>
-                <button type="button" id="loginbutton" name="loginbutton" class="solid" disabled="true">Entrar</button>
-            </div>
-            <div>
-                <button type="button" class="outline" onclick="registrar()">Registrar</button>
-            </div>
-        </form>
-    </div>
-    <script src="/js/Index.js"></script>
-    <script src="/js/validations.js"></script>
-    <script src="/js/loading.js"></script>
 
+    <div class="topPagina">
+        <img src="/img/golzimLimpo.png" width="30%">
+    </div>
+
+    <div class="textoHome">
+        <h3>Confie e Ganhe!</h3>
+    </div>
+    <di class="textoHome">
+        <p>Aqui você encontra as melhores projeções de apostas para futebol.</p>
+    </di>
+
+    <ul class="accordion-menu">
+        <li>
+            <p class="divRight">></p>
+            <div class="dropdownlink" onclick="acessarResultadoFinal()">Resutado Final
+            </div>
+
+        </li>
+        <li>
+            <p class="divRight">></p>
+            <div class="dropdownlink" onclick="acessar1gol1tempo()"> 1-Gol 1º Tempo
+            </div>
+        </li>
+        <li>
+            <p class="divRight">></p>
+            <div class="dropdownlink" onclick="acessar2gol1tempo()"> 2-Gols 1º Tempo
+            </div>
+        </li>
+        <li>
+            <p class="divRight">></p>
+            <div class="dropdownlink" onclick="acessar3gol1tempo()">3-Gols 1º Tempo
+            </div>
+        </li>
+        <li>
+            <p class="divRight">></p>
+            <div class="dropdownlink" onclick="acessar2golsNoJogo()">2-Gols no Jogo (90 min)
+            </div>
+        </li>
+        <li>
+            <p class="divRight">></p>
+            <div class="dropdownlink" onclick="acessar3golsNoJogo()">3-Gols no Jogo (90 min)
+            </div>
+        </li>
+    </ul>
+    <!--<div class="btnpositionHome">
+        <button type="button" name="btnSair" id="btnSair" class="clearHome">Sair</button>
+    </div>-->
+    <script src="/js/home.js"></script>
+    <script src="/js/validations.js"></script>
+    <script src="/js/1gol1tempo.js"></script>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 
         const app = initializeApp(firebaseConfig);
@@ -62,15 +75,11 @@
         const auth = getAuth();
 
 
-        loginbutton.addEventListener('click', (e) => {
-            showLoading();
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            signInWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
+        btnSair.addEventListener('click', (e) => {
+            signOut(auth)
+                .then(() => {
                     // Signed in 
-                    hideLoading();
-                    logar();
+                    window.location.href = '../../../login.html';
                     // ...
                 })
                 .catch((err) => {
@@ -79,29 +88,6 @@
                 });
 
         });
-        recorevypassword.addEventListener('click', (e) => {
-            const email = document.getElementById("email").value;
-            console.log(email);
-            showLoading();
-            sendPasswordResetEmail(auth, email).then(() => {
-                // Password reset email sent!
-
-                hideLoading();
-            })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    alert(errorMessage);
-                    hideLoading();
-                    // ..
-                });
-        });
-        auth.onAuthStateChanged(function (user) {
-            if (user) {
-                console.log(user);
-                logar();
-            }
-        })
     </script>
 </body>
 

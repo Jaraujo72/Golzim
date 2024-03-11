@@ -8,7 +8,7 @@ button {
 .accordion-menu {
     width: 100%;
     max-width: 95%;
-    margin: 60px auto 20px;
+    margin: 30px auto 5px;
     background: #fff;
     border-radius: 4px;
     position: relative;
@@ -27,8 +27,8 @@ button {
 
 .dropdownlink {
     cursor: pointer;
-    padding: 20px 30px;
-    font-size: 16px;
+    padding: 10px 20px;
+    font-size: 20px;
     border-bottom: 1px solid #ccc;
     color: #212121;
     transition: all 0.4s ease-out;
@@ -38,7 +38,7 @@ button {
     text-decoration: none;
 
     &:hover {
-        background-color: #faca54;
+        background-color: rgba(243, 239, 239, 0.944);
         color: #22284c;
         font-weight: bold;
     }

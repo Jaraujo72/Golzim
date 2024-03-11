@@ -13,14 +13,18 @@
 </head>
 
 <body>
-  <div class="topPagina">Jogos do dia 10/03/2024 +0.5 Gol HT</div>
+  <div class="topPagina" style="font-size: 20px; text-align: center;"><b>Dia 10/03/2024 +0.5 Gol HT</b></div>
   <div class="topPaginaPages">Premier League</div>
   <ul class="accordion-pages">
     <li>
       <a href="https://fir3.net/6dpevS" target="_blank" style="text-decoration: none;">
         <div class="dropdownlink">
-          <p>Aston Villa x Tottenham
-          </p>
+          <div class="time">
+            <p><b>Aston Villa x Tottenham</b></p>
+            <div class="palpite">
+              <p><b>16:00</b></p>
+            </div>
+          </div>
         </div>
       </a>
     </li>
@@ -29,8 +33,12 @@
     <li>
       <a href="https://fir3.net/gxD3d" target="_blank" style="text-decoration: none;">
         <div class="dropdownlink">
-          <p>Brighton x Nottingham
-          </p>
+          <div class="time">
+            <p><b>Brighton x Nottingham</b></p>
+            <div class="palpite">
+              <p><b>16:00</b></p>
+            </div>
+          </div>
         </div>
       </a>
     </li>
@@ -39,8 +47,12 @@
     <li>
       <a href="https://fir3.net/P8TXoXG0" target="_blank" style="text-decoration: none;">
         <div class="dropdownlink">
-          <p>West Ham x Burnley
-          </p>
+          <div class="time">
+            <p><b>West Ham x Burnley</b></p>
+            <div class="palpite">
+              <p><b>16:00</b></p>
+            </div>
+          </div>
         </div>
       </a>
     </li>
@@ -49,8 +61,12 @@
     <li>
       <a href="https://fir3.net/jTQgNXH" target="_blank" style="text-decoration: none;">
         <div class="dropdownlink">
-          <p>Bayer Leverkus x Wolfsburg
-          </p>
+          <div class="time">
+            <p><b>Bayer Leverkus x Wolfsburg</b></p>
+            <div class="palpite">
+              <p><b>16:00</b></p>
+            </div>
+          </div>
         </div>
       </a>
     </li>
@@ -60,8 +76,12 @@
     <li>
       <a href="https://fir3.net/yEz4JH0" target="_blank" style="text-decoration: none;">
         <div class="dropdownlink">
-          <p>Real Madrid x Celta de Vigo
-          </p>
+          <div class="time">
+            <p><b>Real Madrid x Celta de Vigo</b></p>
+            <div class="palpite">
+              <p><b>16:00</b></p>
+            </div>
+          </div>
         </div>
       </a>
     </li>
@@ -71,8 +91,12 @@
     <li>
       <a href="https://fir3.net/LtE8rdWa" target="_blank" style="text-decoration: none;">
         <div class="dropdownlink">
-          <p>Goiás x Goiânia
-          </p>
+          <div class="time">
+            <p><b>Goiás x Goiânia</b></p>
+            <div class="palpite">
+              <p><b>16:00</b></p>
+            </div>
+          </div>
         </div>
       </a>
     </li>
@@ -94,24 +118,9 @@
     const database = getDatabase(app);
     const auth = getAuth();
 
-
-    btnSair.addEventListener('click', (e) => {
-      signOut(auth)
-        .then(() => {
-          // Signed in 
-          window.location.href = '../../../index.html';
-          // ...
-        })
-        .catch((err) => {
-          hideLoading();
-          alert(err.message);
-        });
-
-    });
-
     onAuthStateChanged(auth, (user) => {
       if (!user) {
-        window.location.href = '../../../index.html';
+        window.location.href = '../../../login.html';
       };
     });
   </script>
