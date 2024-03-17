@@ -44,6 +44,24 @@ button {
     }
 }
 
+.dropdownlinkImage {
+    cursor: pointer;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    color: #212121;
+    transition: all 0.4s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    &:hover {
+        background-color: rgba(243, 239, 239, 0.944);
+        color: #22284c;
+        font-weight: bold;
+    }
+}
+
 form {
     width: 300px;
 }
